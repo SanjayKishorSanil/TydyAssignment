@@ -1,0 +1,32 @@
+<h1>Language List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+             <th>PID</th>
+            <th>Programming Language Name</th>
+            <th>Released Year</th>
+            <th>Git hub Rank</th>
+            <th>Pypl Rank</th>
+            <th>Tiobe Rank </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.released_year}}</td>
+            <td>{{this.githut_rank}}</td>
+            <td>{{this.pypl_rank}}</td>
+            <td>{{this.tiobe_rank}}</td>
+            <td>
+                <a href="/languages/{{this.id}}?_method=DELETE" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+ <a class="btn btn-secondary"  href="/languages?page={{nextPage}}"  style="color: rgb(0, 0, 0);">Next Page</a>
